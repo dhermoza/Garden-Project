@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_28_034110) do
+ActiveRecord::Schema.define(version: 2021_10_28_034801) do
 
-  create_table "plants", force: :cascade do |t|
+  create_table "gardens", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "plants", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "garden_id"
+    t.index ["garden_id"], name: "index_plants_on_garden_id"
+  end
+
+  add_foreign_key "plants", "gardens"
 end

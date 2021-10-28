@@ -1,0 +1,7 @@
+<h1>Welcome to my garden index</h1>
+
+<% @gardens.each do |g| %>
+<div>
+  <h2><%= link_to g.name, garden_path(g)  %></h2>
+</div>
+<% end %>

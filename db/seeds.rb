@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "empezando seeds"
+garden = Garden.create!(name: 'Mi primer jardin', description: 'este es mi primer jardin')
+garden2 = Garden.create!(name: 'Mi segundo jardin', description: 'este es mi segundo jardin')
+puts "terminando seeds"

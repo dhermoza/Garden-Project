@@ -1,0 +1,8 @@
+<h1>Add a new plant</h1>
+<%= @plant %>
+
+<%= simple_form_for [@garden, @plant] do |f| %>
+<%= f.input :name %>
+<%= f.input :description %>
+<%= f.submit %>
+<% end %>

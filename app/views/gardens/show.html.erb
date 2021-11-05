@@ -1,5 +1,14 @@
-<h1>Este es el detalle de mi jardín</h1>
-<%= @garden.name %>
-<%= @garden.description %>
+<h1>Estas son las plantas de mi jardín</h1>
+<p><%= @garden.name %> - <%= @garden.description %> </p>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <% @plants.each do |p| %>
+        <p><%= p.name %> - <%= p.description %> </p>
+      <% end  %>
+    </div>
+  </div>
+</div>
 
-<button><%= link_to "Back", root_path %></button>
+<button><%= link_to "Add a plant", new_garden_plant_path(@garden) %></button>
+<button><%= link_to "Back", gardens_path %></button>
